@@ -3,7 +3,8 @@ deviceshake.js
 
 何これ？
 --------
-devicemotionイベントを使って、スマートフォン/タブレット端末を振った時にイベントを起こすためのJavaScriptライブラリです。
+devicemotionイベントを使って、デバイスを振った時にイベントを起こすためのJavaScriptライブラリです。
+特定のJavaScriptライブラリに依存しません。このファイル単体で利用可能です。
 
 devicemotionイベントについては以下を参照
 http://www.w3.org/TR/orientation-event/
@@ -25,18 +26,19 @@ deviceshake.jsを読み込むと、windowオブジェクトに次のイベント
 * Vanilla JS（≒他のJavaScriptライブラリに依存しない書き方）
 ```javascript
 window.addEventListener('deviceshake', function(){
-	//
+    //do something
 });
 ```
-
 
 * jQuery 1.7+
 ```javascript
 $(window).on('deviceshake', function(){
-	//
+    //do something
 });
 ```
 
 
+ライセンス
+----------
 This is MIT LICENSE :)
 
