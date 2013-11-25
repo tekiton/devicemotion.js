@@ -1,3 +1,9 @@
+/**
+ * deviceshake.js
+ * 
+ * @author tekiton
+ * @license MIT LICENSE :)
+ */
 (function(){
 	
 	var dispatchInterval = 500;
