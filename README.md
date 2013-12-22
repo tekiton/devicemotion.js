@@ -38,6 +38,16 @@ $(window).on('deviceshake', function(){
 ```
 
 
+動作確認済み環境
+----------------
+* Android 4.0+ Browser
+* Google Chrome for Android
+* iOS 5.0+ Safari 
+* Google Chrome for iOS
+
+Android 2.x系のブラウザは、そもそも devicemotion イベントに対応していないので動作しません。
+
+
 ライセンス
 ----------
 This is MIT LICENSE :)
