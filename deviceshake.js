@@ -1,24 +1,23 @@
 /**
  * deviceshake.js
+ * https://github.com/tekiton/deviceshake.js
  * 
  * @author tekiton
  * @license MIT LICENSE :)
  */
-(function(){
+;(function(){
 	
-	var dispatchInterval = 500;
+	var dispatchInterval = 200;
 	
-	var devicesway   = {
+	var devicesway  = {
 		eventName: 'devicesway',
 		threshold: 0.5
 	};
-	devicesway.event     = new Event(devicesway.eventName);
 	
 	var deviceshake = {
 		eventName: 'deviceshake',
 		threshold: 7
 	};
-	deviceshake.event = new Event(deviceshake.eventName);
 	
 	var accelerationIncludingGravity     = { x:0, y:0, z:0 };
 	var accelerationIncludingGravityDiff = { x:[0], y:[0], z:[0] };
@@ -48,11 +47,15 @@
 		var z = Math.max.apply(null, accelerationIncludingGravityDiff.z);
 		
 		if( x>devicesway.threshold || y>devicesway.threshold ){
-			window.dispatchEvent(devicesway.eventName);
+			var swayEvent = document.createEvent('HTMLEvents');
+			swayEvent.initEvent(devicesway.eventName, false, false);
+			window.dispatchEvent(swayEvent)
 		}
 		
 		if( x>deviceshake.threshold || y>deviceshake.threshold ){
-			window.triggerHandler(deviceshake.eventName);
+			var shakeEvent = document.createEvent('HTMLEvents');
+			shakeEvent.initEvent(deviceshake.eventName, false, false);
+			window.dispatchEvent(shakeEvent)
 		}
 		
 		accelerationIncludingGravityDiff.x = [0];
